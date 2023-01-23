@@ -9,6 +9,7 @@ import { UserInputComponent } from './user-input/user-input.component';
 import { UserService } from './user.service';
 import { UserItemComponent } from './user-item/user-item.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     UserInputComponent,
     UserItemComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

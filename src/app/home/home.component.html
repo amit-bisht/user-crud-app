@@ -1,4 +1,4 @@
-<p *ngIf="isLoading && users">Loading....</p>
+<app-loader *ngIf="isLoading && !users"></app-loader>
 <div class="container my-4" *ngIf="!isLoading && users">
     <div class="row">
         <app-user-input (newAddUserEvent)="onAddUser($event)"></app-user-input>
