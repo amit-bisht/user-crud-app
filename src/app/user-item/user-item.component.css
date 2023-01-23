@@ -1,0 +1,12 @@
+#user-info{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+#user-info p{
+    margin: 0px;
+    margin-top: 2px;
+    margin-bottom: 1px;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

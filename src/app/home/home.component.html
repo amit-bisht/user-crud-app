@@ -1,0 +1,11 @@
+<p *ngIf="isLoading && users">Loading....</p>
+<div class="container my-4" *ngIf="!isLoading && users">
+    <div class="row">
+        <app-user-input (newAddUserEvent)="onAddUser($event)"></app-user-input>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" *ngFor="let user of users['data']">
+            <app-user-item (newUpdateUserEvent)="onUpdateUser($event)" [user]="user"></app-user-item>
+        </div>
+    </div>
+</div>

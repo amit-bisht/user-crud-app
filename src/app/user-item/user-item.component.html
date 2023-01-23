@@ -1,0 +1,46 @@
+<div class="card rounded shadow-sm border-0 my-2">
+    <div class="card-body p-4"><img [src]=" user.avatar ? user.avatar : './assets/default.png' " alt=""
+            class="d-block mx-auto rounded-circle" height="110" width="110">
+        <div id="user-info">
+            <p class="text-center">
+                <b>UserName:</b>{{ user.first_name+" "+user.last_name }}
+            </p>
+            <p class="text-center"><b>Email:</b>{{ user.email }}</p>
+        </div>
+        <div class="d-grid gap-2" style="margin-top: 10px;">
+            <button class="btn btn-danger mx-4" type="button" (click)="open(content)">Edit</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-model>
+    <div class="modal-header">
+        <h5 class="modal-title" id="modal-basic-title">Update User</h5>
+    </div>
+    <div class="modal-body">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+            <div class="mb-3">
+                <label for="first-name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first-name" required name="first-name" [ngModel]="user.first_name">
+            </div>
+            <div class="mb-3">
+                <label for="last-name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last-name" required name="last-name" [ngModel]="user.last_name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required [ngModel]="user.email">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Please select users image</label>
+                <input class="form-control" type="text" name="avatar" id="avatar" name="avatar" [ngModel]="user.avatar">
+            </div>
+            <div class="d-grid gap-2" style="margin-top: 10px;">
+                <button class="btn btn-success mx-2" [disabled]="!f.valid" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+    </div>
+</ng-template>
